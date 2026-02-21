@@ -1,0 +1,19 @@
+{
+  "name": "openclaw-context-budget",
+  "version": "0.1.0",
+  "description": "OpenClaw plugin that enforces progressive disclosure by truncating oversized persisted tool results.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "openclaw",
+    "plugin",
+    "context",
+    "truncation",
+    "cron"
+  ],
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

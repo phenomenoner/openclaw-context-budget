@@ -1,0 +1,77 @@
+{
+  "id": "openclaw-context-budget",
+  "name": "OpenClaw Context Budget",
+  "description": "Hard-enforce progressive disclosure by truncating oversized tool results before they are persisted into session transcripts.",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "default": true
+      },
+      "cronOnly": {
+        "type": "boolean",
+        "default": true
+      },
+      "toolAllowlist": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": [
+          "exec",
+          "read"
+        ]
+      },
+      "maxChars": {
+        "type": "integer",
+        "minimum": 1,
+        "default": 40000
+      },
+      "maxLines": {
+        "type": "integer",
+        "minimum": 1,
+        "default": 200
+      },
+      "tailLines": {
+        "type": "integer",
+        "minimum": 1,
+        "default": 80
+      },
+      "outDir": {
+        "type": "string",
+        "default": "/tmp/openclaw/context-budget"
+      }
+    }
+  },
+  "uiHints": {
+    "enabled": {
+      "label": "Enable context budget guard"
+    },
+    "cronOnly": {
+      "label": "Apply only to cron sessions",
+      "help": "When true, only session keys containing ':cron:' are processed."
+    },
+    "toolAllowlist": {
+      "label": "Tool allowlist",
+      "help": "Only tool results from these tool names are considered for truncation."
+    },
+    "maxChars": {
+      "label": "Max chars",
+      "help": "Maximum characters allowed before truncation kicks in."
+    },
+    "maxLines": {
+      "label": "Max lines",
+      "help": "Maximum lines allowed before truncation kicks in."
+    },
+    "tailLines": {
+      "label": "Tail lines",
+      "help": "How many trailing lines to keep in the persisted snippet."
+    },
+    "outDir": {
+      "label": "Archive output directory",
+      "help": "Directory used to store full tool outputs before truncation."
+    }
+  }
+}
