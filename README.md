@@ -24,6 +24,7 @@ The plugin registers the synchronous `tool_result_persist` hook and, when a matc
 - `maxLines: 200`
 - `tailLines: 80`
 - `outDir: /tmp/openclaw/context-budget`
+- `maxFilesPerSession: 0` (unlimited; optional retention safety)
 
 So by default, it only guards cron-session `exec`/`read` results.
 
@@ -69,7 +70,8 @@ Add under `plugins.entries.openclaw-context-budget.config` in `openclaw.json`:
           "maxChars": 40000,
           "maxLines": 200,
           "tailLines": 80,
-          "outDir": "/tmp/openclaw/context-budget"
+          "outDir": "/tmp/openclaw/context-budget",
+          "maxFilesPerSession": 0
         }
       }
     }
@@ -78,6 +80,8 @@ Add under `plugins.entries.openclaw-context-budget.config` in `openclaw.json`:
 ```
 
 Example to enable for all sessions and additional tools:
+
+> Note: `toolAllowlist: []` means **match nothing** (disable truncation) as a safety default.
 
 ```jsonc
 {

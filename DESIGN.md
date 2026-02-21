@@ -35,11 +35,13 @@ the plugin:
 1. Extracts textual payload from tool result (`content` text blocks + serialized `details`).
 2. Writes full extracted text to archive file under:
    - `<outDir>/<sessionKey>/<timestamp>-<tool>-<call>-<hash>.txt`
+   - (path segments are sanitized; resolved paths are verified to stay under `outDir`)
 3. Replaces persisted message content with:
    - truncation marker,
    - one-line archive pointer,
    - bounded **tail-preferred** snippet.
 
+Persisted replacement text is sized to remain within the configured budget (header + snippet).
 Tail strategy:
 
 - keep the last `tailLines` lines,

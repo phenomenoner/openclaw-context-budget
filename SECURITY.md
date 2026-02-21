@@ -30,6 +30,7 @@ Operationally, also ensure parent directories and host mount policies are privat
 1. Keep `cronOnly=true` unless broader scope is required.
 2. Keep `toolAllowlist` narrow.
 3. Rotate/clean archive directory if retention policy demands.
+   - Optional built-in retention: set `maxFilesPerSession` (>0) to prune oldest archived files per session directory.
 4. Restrict access to `/tmp/openclaw/context-budget` (or custom `outDir`).
 
 ## Reporting

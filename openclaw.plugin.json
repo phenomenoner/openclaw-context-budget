@@ -42,6 +42,11 @@
       "outDir": {
         "type": "string",
         "default": "/tmp/openclaw/context-budget"
+      },
+      "maxFilesPerSession": {
+        "type": "integer",
+        "minimum": 0,
+        "default": 0
       }
     }
   },
@@ -55,7 +60,7 @@
     },
     "toolAllowlist": {
       "label": "Tool allowlist",
-      "help": "Only tool results from these tool names are considered for truncation."
+      "help": "Only tool results from these tool names are considered for truncation. NOTE: empty array means match nothing (disable)."
     },
     "maxChars": {
       "label": "Max chars",
@@ -72,6 +77,10 @@
     "outDir": {
       "label": "Archive output directory",
       "help": "Directory used to store full tool outputs before truncation."
+    },
+    "maxFilesPerSession": {
+      "label": "Retention: max files per session",
+      "help": "Best-effort retention. 0 = unlimited. If >0, plugin prunes oldest archived .txt files under each session directory before writing new ones."
     }
   }
 }
