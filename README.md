@@ -49,7 +49,7 @@ openclaw gateway restart
 ### Option B — from npm (after publish)
 
 ```bash
-openclaw plugins install openclaw-context-budget
+openclaw plugins install @phenomenoner/openclaw-context-budget
 openclaw gateway restart
 ```
 
