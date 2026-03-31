@@ -102,6 +102,26 @@ Example to enable for all sessions and additional tools:
 }
 ```
 
+## Doctor / health check
+
+Run a thin local health check:
+
+```bash
+npm run doctor
+npm run doctor -- --json
+# or point at a different OpenClaw config
+npm run doctor -- --config /root/.openclaw/openclaw.json --json
+```
+
+What it checks:
+- OpenClaw config readability
+- plugin entry present/enabled posture
+- plugin config enabled/allowlist/caps
+- `outDir` absolute/writable-parent posture
+- local repo manifest/runtime files present
+
+This is intentionally a **thin operator doctor**, not a setup wizard or live gateway mutator.
+
 ## Safety notes
 
 - Runs in-process with gateway permissions; only install trusted plugin code.

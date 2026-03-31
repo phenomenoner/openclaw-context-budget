@@ -46,6 +46,8 @@ openclaw gateway restart
 ```bash
 openclaw plugins list | grep openclaw-context-budget
 openclaw plugins doctor
+cd /root/.openclaw/workspace/openclaw-context-budget
+npm run doctor -- --json
 ```
 
 For a cron session that emits a huge `exec`/`read` result, you should see persisted transcript content replaced with a marker + file pointer, with full output archived under:
