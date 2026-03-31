@@ -120,6 +120,11 @@ What it checks:
 - `outDir` absolute/writable-parent posture
 - local repo manifest/runtime files present
 
+Contract quick read:
+- this is a **doctor surface**: `kind` + `ts` + `ok` + `summary` + `checks`
+- `summary` is the short operator read; `config` is the richer detail block
+- family compare card: `openclaw-async-coding-playbook/projects/openclaw-ops/docs/operator-surface-contract-family.v0.md`
+
 This is intentionally a **thin operator doctor**, not a setup wizard or live gateway mutator.
 
 ## Safety notes
